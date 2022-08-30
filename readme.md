@@ -16,6 +16,7 @@
 
 ![Screenshot](OfflineAnalytics.png)
 
+### Offline Analytics
 1. BI dashboards or reports can be created by using data (including historical) stored in data warehouse or data lake.
 2. The below productions should be built:
    - Data ingestion pipeline(s)
@@ -29,10 +30,23 @@
    - Client can query data via a SQL endpoint
    - Client and subscribe dashboard from a BI system
    - Files can be delivered to client via email, ftp, etc..
-4. Apart from the SLA, Data quality, Alerting&Incident Response tool, we can use logs to develop our own data management system. For example:
-   - Data bricks provide a tool named Overwatch which generate tables for usage of jobs, clusters, and all other resources.
-   - Data bricks also provide API to share the status of its jobs and status.
-   - Pipeline can save status information into a DB, which can be used to analyze the status and performance of pipelines.
+
+### Online observability and Data Quality Monitoring
+Apart from the SLA, Data quality, Alerting&Incident Response tool, we can use predefined logs to develop our own data management system. For example:
+   - Save **all pipeline logs** to a predefined table, which can be used for monitoring, lineage and data quality reporting.
+   - Below information can be stored into the table:
+     - Pipeline execution and completion time
+     - Row count for each run
+     - How many records got updated, inserted, deleted, etc..
+     - Any failures happened in the middle
+     - etc..
+   - Create a **DQ dashboard** to show:
+     - Status of each pipeline
+     - The percentage of job failure/success
+     - Row count trend
+     - Root cause analytics
+     - etc..
+   - Any other data observability systems (like DataDog, Monte Carlo) can also be used for this purpose.
 
 ## Trade-offs & Recommendations 
 1. Data volume
@@ -53,4 +67,6 @@
     - BI dashboard and reporting support
 7. Data observability
    - Use product like data dog, Monte Carlo, etc.
-   - Develop own data management/monitoring system
+   - Develop own data management/monitoring system using any predefined pipeline logs
+8. Tools for both Offline Analytics and Online data observability
+   - **A tool can support both functionality (Data Ingestion + Query Endpoint + Dashboard)**
