@@ -4,7 +4,7 @@
 ### Date: 2022/08/29
 <br><br/>
 
-## Requirement of Offline Analytics (Batch)
+## Requirement
 1. How do we give our customers insight into data from the last six months?
 2. What products and infrastructure should we build? if we're going to have 2-3 engineers focus on building data products for our customers.
 3. How do we present data to our clients?
@@ -12,11 +12,10 @@
 5. Understand the trade-offs and make specific recommendations on what to build.
 
 
-## Design
-
 ![Screenshot](OfflineAnalytics.png)
 
-### Offline Analytics
+
+## Offline Analytics
 1. BI dashboards or reports can be created by using data (including historical) stored in data warehouse or data lake.
 2. The below productions should be built:
    - Data ingestion pipeline(s)
@@ -31,7 +30,7 @@
    - Client and subscribe dashboard from a BI system
    - Files can be delivered to client via email, ftp, etc..
 
-### Online observability and Data Quality Monitoring
+## Online Observability and Data Quality Monitoring
 Apart from the SLA, Data quality, Alerting&Incident Response tool, we can use predefined logs to develop our own data management system. For example:
    - Save **all pipeline logs** to a predefined table, which can be used for monitoring, lineage and data quality reporting.
    - Below information can be stored into the table:
