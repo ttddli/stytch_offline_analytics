@@ -4,7 +4,7 @@
 ### Date: 2022/08/29
 <br><br/>
 
-### Requirement of Offline Analytics (Batch)
+## Requirement of Offline Analytics (Batch)
 1. How do we give our customers insight into data from the last six months?
 2. What products and infrastructure should we build? if we're going to have 2-3 engineers focus on building data products for our customers.
 3. How do we present data to our clients?
@@ -12,7 +12,7 @@
 5. Understand the trade-offs and make specific recommendations on what to build.
 
 
-### Design
+## Design
 
 ![Screenshot](OfflineAnalytics.png)
 
@@ -34,7 +34,7 @@
    - Data bricks also provide API to share the status of its jobs and status.
    - Pipeline can save status information into a DB, which can be used to analyze the status and performance of pipelines.
 
-### Trade-offs & Recommendations 
+## Trade-offs & Recommendations 
 1. Data volume
     - Multiple data sources + large data volume: big data computation on cloud
     - Single data source + small data volume: local, on-premise or single server
